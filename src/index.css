@@ -1,0 +1,79 @@
+/* ПАЛИТРА*/
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    --bg: #f0f0f0;
+    --bg-gr: linear-gradient(
+        137deg,
+        rgba(250, 250, 250, 1) 0%,
+        rgba(255, 255, 255, 1) 11%,
+        rgba(156, 170, 182, 1) 61%,
+        rgba(156, 170, 182, 1) 87%,
+        rgba(255, 255, 255, 1) 97%
+    );
+    --black: #002244;
+    --white: #e9e9e9;
+    --dark: #1c1b21;
+    --fiolet: #3e3b57;
+    --fiolet-gr: linear-gradient(
+        198deg,
+        rgba(62, 59, 87, 1) 6%,
+        rgba(143, 130, 255, 1) 18%,
+        rgba(62, 59, 87, 1) 36%,
+        rgba(125, 119, 179, 1) 87%,
+        rgba(143, 130, 255, 1) 97%
+    );
+    --gray: #919191;
+    --primary: #2245e3;
+    --primary-hover: #263782;
+    --secondary: #cc46c9;
+    --blue: #001aff;
+    --red: #ff0000;
+    --green: #00cf2d;
+    --cyan: #146b91;
+}
+/* СТИЛИЗАЦИЯ ДОКУМЕНТА */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+*::-webkit-scrollbar-track {
+    background: var(--black);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--white);
+    height: 30px;
+    border-radius: 5px;
+    border: 3px solid var(--black);
+}
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--white);
+    background: var(--dark);
+}
+button,
+input {
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
