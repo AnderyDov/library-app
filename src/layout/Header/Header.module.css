@@ -1,7 +1,20 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     color: var(--white);
-    padding: 10px;
+    padding: 10px 40px;
+    font-weight: 900;
+    font-size: 24px;
+}
+.logo {
+    width: 35px;
+    height: 35px;
+    fill: var(--white);
+}
+.logo:hover {
+    fill: var(--secondary);
+}
+.title {
+    margin-left: 100px;
 }

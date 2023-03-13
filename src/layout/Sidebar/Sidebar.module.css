@@ -1,7 +1,31 @@
 .sidebar {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: flex-start;
     color: var(--white);
     padding: 10px;
+}
+.sidebar svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    fill: var(--white);
+}
+.sidebar a {
+    list-style: none;
+    cursor: pointer;
+    color: var(--white);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.sidebar a:hover,
+.sidebar a:hover svg {
+    color: var(--secondary);
+    fill: var(--secondary);
+}
+.active {
+    color: var(--primary);
+    fill: var(--primary);
 }

@@ -1,4 +1,5 @@
 import { FunctionComponent, useRef, useState, KeyboardEvent } from 'react';
+import User from './User/User';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
 import styles from './Layout.module.css';
@@ -11,6 +12,7 @@ function Layout({ children }: LayoutProps): JSX.Element {
         <div className={styles.layout}>
             <Header className={styles.header} />
             <Sidebar className={styles.sidebar} />
+            <User className={styles.user} />
             <div className={styles.content}>{children}</div>
             <Footer className={styles.footer} />
         </div>
