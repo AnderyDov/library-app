@@ -4,22 +4,31 @@ import { UserProps } from './User.props';
 import cn from 'classnames';
 import Search from './search.svg';
 import Avatar from './avatar.svg';
-import { useRecoilState } from 'recoil';
-import { searchStringState, typeSearchState } from '../../store/atoms';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import {
+    // searchStringState,
+    typeSearchState,
+    currentBooksState,
+    booksState,
+} from '../../store/atoms';
+import { IBook } from '../../interfaces/Book.interface';
 
 export default function User({ className, ...props }: UserProps) {
     const [typeSearch, setTypeSearch] = useRecoilState(typeSearchState);
-    const [searchString, setSearchString] = useRecoilState(searchStringState);
+    // const [searchString, setSearchString] = useRecoilState(searchStringState);
+    const [currentBooks, setCurrentBooks] = useRecoilState(currentBooksState);
+    const books = useRecoilValue(booksState);
     const debounceRef = useRef<number>();
 
     function handlerChangeSearch(e: any) {
-        setSearchString(e.currentTarget.value);
+        // setSearchString(e.currentTarget.value);
         debunceSearch(e.currentTarget.value);
+        if (e.target.value.length === 0) {
+            setCurrentBooks(books);
+        }
     }
 
-    function handlerChangeType(e: {
-        target: { value: string | ((currVal: string) => string) };
-    }) {
+    function handlerChangeType(e: any) {
         setTypeSearch(e.target.value);
     }
 
@@ -30,10 +39,21 @@ export default function User({ className, ...props }: UserProps) {
         debounceRef.current = setTimeout(() => {
             if (value.length > 2) {
                 console.log(value);
-
-                // dispatch(showSearchResult({ targetString: value }));
+                showResultsSearch(typeSearch, value);
             }
         }, 500);
+    }
+
+    function showResultsSearch(type: string, searchString: string) {
+        let rex = new RegExp(searchString, 'i');
+        let result: IBook[] = [];
+        currentBooks.forEach((el) => {
+            if (rex.test(el[type])) {
+                result.push(el);
+            }
+        });
+        // @ts-ignore
+        setCurrentBooks(result);
     }
 
     return (
@@ -48,20 +68,20 @@ export default function User({ className, ...props }: UserProps) {
                 <span>
                     <input
                         name='radio'
-                        value='1'
-                        checked={typeSearch === '1' ? true : false}
                         type='radio'
-                        onChange={handlerChangeType}
+                        value='author'
+                        checked={typeSearch === 'author' ? true : false}
+                        onChange={(e) => handlerChangeType(e)}
                     />{' '}
                     поиск по автору
                 </span>
                 <span>
                     <input
                         name='radio'
-                        value='2'
-                        checked={typeSearch === '1' ? false : true}
                         type='radio'
-                        onChange={handlerChangeType}
+                        value='book'
+                        checked={typeSearch === 'book' ? true : false}
+                        onChange={(e) => handlerChangeType(e)}
                     />{' '}
                     поиск по названию
                 </span>

@@ -12,7 +12,7 @@ export const currentBooksState = atom({
 
 export const typeSearchState = atom({
     key: 'typeSearchState',
-    default: '1',
+    default: 'author',
 });
 
 export const searchStringState = atom({
