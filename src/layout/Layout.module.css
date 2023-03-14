@@ -3,7 +3,7 @@
 
     min-height: 100vh;
     grid-template-columns: auto 190px minmax(320px, 1200px) auto;
-    grid-template-rows: auto 70px 1fr auto;
+    grid-template-rows: auto 100px 1fr auto;
     /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
     grid-template-areas:
         '. header header .'
