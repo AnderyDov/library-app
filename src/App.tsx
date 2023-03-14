@@ -3,35 +3,26 @@ import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { booksState, currentBooksState } from './store/atoms';
 import { handlerFetch } from './api/handlerFetch';
-import { Book } from './components';
 import { IBook } from './interfaces/Book.interface';
-import styles from './app.module.css';
+import Books from './pages/Books/Books';
 
 function App(): JSX.Element {
     // @ts-ignore
-    const [, setBooks] = useRecoilState<IBook[]>(booksState);
+    const [books, setBooks] = useRecoilState<IBook[]>(booksState);
     const [currentBooks, setCurrentBooks] =
         // @ts-ignore
         useRecoilState<IBook[]>(currentBooksState);
 
     useEffect(() => {
-        handlerFetch(setBooks, setCurrentBooks);
+        if (!books.length) {
+            console.log(books.length);
+
+            console.log('FETCH');
+            handlerFetch(setBooks, setCurrentBooks);
+        }
     }, []);
 
-    return (
-        <div className={styles.app}>
-            {currentBooks.map((el) => {
-                return (
-                    <Book
-                        key={el.id}
-                        author={el.author}
-                        book={el.book}
-                        rating={el.rating}
-                    />
-                );
-            })}
-        </div>
-    );
+    return <Books />;
 }
 
 export default withLayout(App);

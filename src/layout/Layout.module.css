@@ -29,6 +29,8 @@
 .content {
     grid-area: content;
     background: var(--bg-gr);
+    color: var(--dark);
+    padding: 20px;
 }
 
 .footer {

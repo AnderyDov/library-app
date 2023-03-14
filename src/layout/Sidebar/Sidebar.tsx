@@ -5,26 +5,27 @@ import Home from './home.svg';
 import News from './news.svg';
 import Events from './events.svg';
 import Employy from './employy.svg';
+import { Link } from 'react-router-dom';
 
 export default function Sidebar({ className, ...props }: SidebarProps) {
     return (
         <div className={cn(className, styles.sidebar, {})} {...props}>
-            <a href='/'>
+            <Link to='/'>
                 <Home />
                 <span>Главная</span>
-            </a>
-            <a href='/news'>
+            </Link>
+            <Link to='/news'>
                 <News />
                 <span>Новости</span>
-            </a>
-            <a href='/employees'>
+            </Link>
+            <Link to='/employy'>
                 <Employy />
                 <span>Сотрудники</span>
-            </a>
-            <a href='/events'>
+            </Link>
+            <Link to='/events'>
                 <Events />
                 <span>Мероприятия</span>
-            </a>
+            </Link>
         </div>
     );
 }
