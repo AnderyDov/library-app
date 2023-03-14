@@ -16,12 +16,16 @@
     color: var(--black);
     font-weight: normal;
 }
-.search span {
+.search label {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    cursor: pointer;
 }
-.search span input {
+.search label:hover {
+    color: var(--secondary);
+}
+.search label input {
     margin: 0 10px;
 }
 .searchText {

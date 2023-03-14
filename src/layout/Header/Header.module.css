@@ -20,9 +20,27 @@
     width: 40px;
     height: 40px;
     fill: var(--red);
+    animation: git 1.2s ease-in-out infinite;
 }
 .link:hover {
     fill: var(--primary);
+}
+@keyframes git {
+    0% {
+        scale: 0.9;
+    }
+    25% {
+        scale: 1.2;
+    }
+    45% {
+        scale: 0.8;
+    }
+    70% {
+        scale: 1.1;
+    }
+    90% {
+        opacity: 1;
+    }
 }
 .text {
     font-style: 14px;

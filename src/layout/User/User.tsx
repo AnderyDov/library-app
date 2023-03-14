@@ -65,7 +65,7 @@ export default function User({ className, ...props }: UserProps) {
                     type='text'
                     onChange={handlerChangeSearch}
                 />
-                <span>
+                <label>
                     <input
                         name='radio'
                         type='radio'
@@ -74,8 +74,8 @@ export default function User({ className, ...props }: UserProps) {
                         onChange={(e) => handlerChangeType(e)}
                     />{' '}
                     поиск по автору
-                </span>
-                <span>
+                </label>
+                <label>
                     <input
                         name='radio'
                         type='radio'
@@ -84,7 +84,7 @@ export default function User({ className, ...props }: UserProps) {
                         onChange={(e) => handlerChangeType(e)}
                     />{' '}
                     поиск по названию
-                </span>
+                </label>
             </div>
             <span className={styles.avatar}>
                 <Avatar />
