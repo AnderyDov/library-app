@@ -1,0 +1,15 @@
+.book {
+    width: 18%;
+    min-width: 150px;
+    aspect-ratio: 1/1.5;
+    box-shadow: 2px 2px 4px var(--black);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: var(--black);
+    background: var(--bg);
+    margin: 10px;
+}
