@@ -2,6 +2,7 @@ import { FunctionComponent, useRef, useState, KeyboardEvent } from 'react';
 import User from './User/User';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
+import MobileMenu from './MobileMenu/MobileMenu';
 import styles from './Layout.module.css';
 import { LayoutProps } from './Layout.props';
 import Sidebar from './Sidebar/Sidebar';
@@ -24,6 +25,7 @@ export default function withLayout<T extends Record<string, unknown>>(
     return function withLauoutComponent(props: T): JSX.Element {
         return (
             <Layout>
+                <MobileMenu className={styles.menu} />
                 <Component {...props} />
             </Layout>
         );

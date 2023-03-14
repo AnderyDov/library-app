@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 import { FooterProps } from './Footer.props';
 import cn from 'classnames';
-import Git from './git.svg';
+import Git from '../git.svg';
 
 export default function Footer({ className, ...props }: FooterProps) {
     return (

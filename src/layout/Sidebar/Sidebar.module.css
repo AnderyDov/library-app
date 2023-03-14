@@ -25,7 +25,8 @@
     color: var(--secondary);
     fill: var(--secondary);
 }
-.active {
+.active svg,
+.active span {
     color: var(--primary);
     fill: var(--primary);
 }

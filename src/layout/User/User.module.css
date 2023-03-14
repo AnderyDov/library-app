@@ -11,7 +11,7 @@
     position: relative;
     flex-grow: 1;
     max-width: 70%;
-    min-width: 200px;
+    min-width: 150px;
     font-size: 12px;
     color: var(--black);
     font-weight: normal;

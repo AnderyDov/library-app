@@ -19,3 +19,7 @@ export const searchStringState = atom({
     key: 'searchStringState',
     default: '',
 });
+export const openMenuState = atom({
+    key: 'openMenuState',
+    default: false,
+});
